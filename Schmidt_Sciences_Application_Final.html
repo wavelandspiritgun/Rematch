@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re.Match - 2026 Science of Trustworthy AI RFP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0F172A;
+            --accent: #2563EB;
+            --bg-color: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text-main: #334155;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --tag-bg: #DBEAFE;
+            --tag-text: #1E40AF;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 3rem 1rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 4rem 5rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.8125rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--tag-bg);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            line-height: 1.25;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            background: #F8FAFC;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.35rem;
+        }
+
+        .meta-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.5rem;
+        }
+
+        .keyword {
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-top: 3.5rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.125rem;
+            color: var(--primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            font-family: 'Merriweather', serif;
+            font-weight: 300;
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: #334155;
+        }
+
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            font-family: 'Merriweather', serif;
+            font-weight: 300;
+            font-size: 1.0625rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: #F0FDF4;
+            border-left: 4px solid #22C55E;
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-style: italic;
+        }
+
+        .figure-link {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            transition: background 0.2s ease;
+        }
+
+        .figure-link:hover {
+            background: var(--accent);
+            text-decoration: none;
+            color: white;
+        }
+
+        .references-section h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.25rem;
+        }
+
+        .references-section p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            text-indent: -1.5rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .references-section a {
+            color: var(--accent);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .references-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-family: 'Inter', sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="eyebrow">Schmidt Sciences — 2026 TAI RFP</span>
+        <h1>Re.Match: A Profile-Conditioned Intelligence Engine for Reducing Information Poverty and Enhancing Structural Justice in Human Recovery</h1>
+        
+        <div class="meta-grid">
+            <div class="meta-item">
+                <span class="meta-label">Grant ID</span>
+                <span class="meta-value">TAI-RFP-Q1-26-0000001946</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Principal Investigator</span>
+                <span class="meta-value">Shane Johns</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Funding Tier</span>
+                <span class="meta-value">Tier 1 (Up to $1M)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Duration</span>
+                <span class="meta-value">12 Months</span>
+            </div>
+            <div class="meta-item" style="grid-column: 1 / -1;">
+                <span class="meta-label">Keywords</span>
+                <div class="keywords">
+                    <span class="keyword">Recidivism</span>
+                    <span class="keyword">Re-entry</span>
+                    <span class="keyword">Recovery</span>
+                    <span class="keyword">Addiction</span>
+                    <span class="keyword">Information Poverty</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h2>Plain-Language Summary</h2>
+        <p>Re.Match is an AI-assisted engine that converts complex life situations into personalized action dossiers to help people navigate reentry, recovery, and homelessness. It reduces "information poverty" by providing navigated, constraint-aware intelligence instead of fragmented resources. It is designed to leverage the creator's justice involvement adjacency and position in the treatment community as a leverage point for replication. The goal is to change as many lives for the better as possible by becoming a force that is too simple, effective, and in alignment to refuse.</p>
+
+        <h2>Key Scientific Question & Agenda Fit</h2>
+        <p><strong>Targeted Research Agenda Subsections</strong><br>
+        This proposal targets Aim 2, specifically <strong>Section 2.1 (Building a Science of Evaluation)</strong> and <strong>Section 2.2 (Interventions that Generalize)</strong>, with critical implications for <strong>Section 1.2 (Mechanisms of Generalization and Representation)</strong>.</p>
+
+        <p><strong>Central Scientific Questions and Objectives</strong><br>
+        The central scientific question we aim to answer is: How can we operationally constrain frontier models to perform deterministic, high-stakes institutional routing without degrading into unverified clinical advice or hallucinated resource allocation under the intense emotional optimization pressure of crisis-state users? Specifically, we investigate the phenomenon of "empathy drift"—where an AI, trained for conversational helpfulness, fundamentally misaligns by prioritizing emotional affirmation over rigid, factual constraint-resolution when interacting with vulnerable populations.</p>
+        
+        <p>Our underlying scientific objective is to advance the science of <em>construct validity</em> in AI evaluation and develop structural interventions that generalize across extreme distribution shifts. We seek to prove that by architecturally decoupling a model’s semantic reasoning (parsing compounding human constraints like felony records or severe poverty) from its retrieval mechanism (accessing verified social-service eligibility graphs), we can definitively anchor its "effective goal." The objective is to pioneer generalizable measurement methodologies that score a model not on fluency, but on its strict adherence to safe, objective navigation boundaries in chaotic environments.</p>
+
+        <p><strong>Why Our Approach is an Exceptional Match</strong><br>
+        Re.Match provides a uniquely rigorous, ecologically valid proving ground for the Science of Trustworthy AI. Conventional safety evaluations typically test what models <em>say</em> within sanitized, theoretical sandboxes. Re.Match tests what models actually <em>do</em> when confronting the hyper-complex, fragmented reality of civic infrastructure and human desperation.</p>
+        
+        <p>By translating established behavioral-health frameworks into deterministic programmatic boundaries, Re.Match creates a highly observable environment to measure algorithmic drift. If the AI deviates from executing a strict navigation protocol into dispensing subjective medical advice, the misalignment is instantly quantifiable. This approach perfectly matches the agenda’s imperative to build evaluations with decision-relevant predictive validity. By forcing the model to solve multi-variable constraint problems within the unforgiving domain of reentry and poverty, we will generate field-shaping empirical insights into how frontier systems generalize, fail, and can be structurally controlled under maximum real-world pressure.</p>
+
+        <h2>Problem and Impact</h2>
+        <p><strong>The Scientific Gap and Primary Risk</strong><br>
+        The primary scientific gap our project targets is the "last-mile alignment problem" in high-stakes, low-resource environments. While frontier models exhibit exceptional generalized reasoning, there is a severe deficit in our empirical understanding of how these systems behave when tasked with multi-variable constraint resolution for highly vulnerable individuals. The acute risk is that when an AI is deployed to assist populations navigating reentry, addiction, or homelessness, the model’s inherent probabilistic nature will generate catastrophic downstream harm—hallucinating non-existent shelter beds, dispensing unlicensed clinical directives, or exhibiting "empathy drift" by prioritizing conversational affirmation over strict, factual routing.</p>
+        
+        <p><strong>Advancing the Science of Trustworthy AI</strong><br>
+        Success with Re.Match materially advances the science of trustworthy AI by proving that stochastic frontier models can be structurally bound to deterministic, safety-critical execution. By architecturally enforcing a separation between semantic parsing (understanding a user's trauma-laden narrative) and topological routing (matching that narrative against a rigid matrix of legal, financial, and geographic eligibility criteria), we establish a generalizable intervention. This structured approach forces the AI to maintain its intended "effective goal" under extreme distribution shifts, moving trustworthy AI from theoretical sandbox evaluations into operational civic reliability.</p>
+        
+        <p><strong>Underlying Assumptions</strong><br>
+        This argument relies on two core assumptions. First, it assumes that <em>information poverty</em>—the crushing administrative friction of discovering and qualifying for services—is as significant a barrier to stabilization as absolute resource scarcity. Second, it assumes that LLMs can be evaluated and constrained to accurately extract compounding human deficits without defaulting to punitive risk-scoring or predictive biases.</p>
+        
+        <p><strong>A Meaningfully Different World</strong><br>
+        If successful, the world will fundamentally shift because the activation energy required to escape crisis cycling will be drastically lowered. Trustworthy AI will be democratized as a public-interest navigation engine, empowering marginalized individuals to autonomously decode bureaucratic labyrinths while freeing human caseworkers to focus entirely on high-leverage relational care.</p>
+        
+        <p><strong>Plausible Outcomes</strong><br>
+        The plausible best-case outcome is that Re.Match scales into a definitive, open-source architectural standard for safe civic AI. It becomes the foundational intelligence layer for human services nationwide, disrupting mass incarceration and poverty cycles while providing researchers a continuous empirical feedback loop on algorithmic alignment in the wild. The minimum valuable outcome is a rigorously monitored, localized pilot that matches a cohort of high-barrier individuals to immediate survival resources demonstrably faster and more safely than baseline manual intervention, thereby yielding a novel, ecologically valid benchmark for AI evaluation.</p>
+        
+        <p><strong>Value in Failure and Timely Importance</strong><br>
+        Even if the project does not succeed, we will precisely map the boundaries of contemporary LLM reasoning, isolating the exact threshold where institutional data fragmentation outpaces algorithmic comprehension. This endeavor is acutely timely; as housing and addiction crises compound simultaneously with rapid AI proliferation, we must establish rigorously evaluated, empowering public-interest infrastructure now, before the civic sector is irrevocably captured by unsafe, extractive, or surveillance-oriented commercial models.</p>
+
+        <h2>Approach</h2>
+        <p>Re.Match is a constraint-aware, AI-mediated resource navigation system. The prototype tests a clear claim: that a profiled, sequenced action dossier — generated from a structured intake of a person’s specific constraints and goals — produces better navigational and life-course outcomes than the generic referral model currently used by social service, reentry, and recovery organizations. The approach has three technical phases plus an integration layer, all grounded in real users in Portland/Washington County.</p>
+
+        <h3>Phase 1: Intake Schema & Profile Engine (Months 1–3)</h3>
+        <p>The core object in Re.Match is the constraint and direction profile. It encodes not just what blocks a person, but where they are trying to go. The schema includes:</p>
+        <ul>
+            <li>Housing status and stability</li>
+            <li>Legal obligations (probation, parole, warrants, court dates, conditions, curfew)</li>
+            <li>Documentation status (ID, SSN, birth certificate, benefits cards, insurance)</li>
+            <li>Transportation access (modes, radius, cost constraints)</li>
+            <li>Recovery status (treatment, MAT, support groups, sobriety goals)</li>
+            <li>Physical and mental health constraints</li>
+            <li>Income and benefit status</li>
+        </ul>
+        <p>And, critically, three distinct future-path categories:</p>
+        <ul>
+            <li><strong>Immediate survival income:</strong> “any job that pays now” — gas station, dishwashing, warehouse work, gig work.</li>
+            <li><strong>Career development:</strong> paths that build toward a durable vocation (trades, tech, healthcare, social services, peer support, etc.).</li>
+            <li><strong>Education and skill-building:</strong> academic programs, certifications, training, and self-directed learning that may delay immediate earnings but increase long-term leverage.</li>
+        </ul>
+        <p>Most systems collapse these into a single “employment” bucket and implicitly reward the first thing that looks like a job. Re.Match treats them as separate dimensions. The intake explicitly asks:</p>
+        <ul>
+            <li>“Are you under pressure (from PO, family, peers) to get ‘any job’ right now?”</li>
+            <li>“If you had real space to choose, what kind of future work or contribution would you want?”</li>
+            <li>“Are you open to trading short-term income for education or career development if your survival needs are met?”</li>
+        </ul>
+        <p>The first experimental task is schema validation with 15–25 people currently navigating reentry, recovery, or homelessness, recruited via partners (Blanchet House, Union Gospel Mission, Outside In, Transition Projects, Catholic Charities Oregon, 4D Recovery, Project Homeless Connect, etc.). For each participant, I will:</p>
+        <ul>
+            <li>Conduct an intake to fill the full profile, including the three future-path categories.</li>
+            <li>Reconstruct recent attempts to “do the right thing” (taking a random job, dropping a class, abandoning a training program) and map whether those moves were survival-driven or aligned with long-term direction.</li>
+            <li>Identify which combinations of constraints and misplaced pressure most reliably produce burnout, relapse, or churn back into the system.</li>
+        </ul>
+        <p>This yields a constraint-and-direction salience model: which constraints must be stabilized first, and how to protect long-term career/education direction from being sacrificed just to appease supervision or social judgment.</p>
+
+        <h3>Baseline</h3>
+        <p>The baseline is “business as usual”: caseworkers and probation officers urging clients toward any job that satisfies paperwork and optics. In Phase 1 I will collect examples of that pattern to contrast with Re.Match’s direction-sensitive plans later.</p>
+
+        <h3>Phase 2: Resource Database & Live Retrieval Layer (Months 2–5)</h3>
+        <p>Re.Match maintains a living knowledge base of local resources, including housing and shelter options, treatment and recovery programs, legal aid and records relief, and benefits and income support.</p>
+        <p>Split employment pathways:</p>
+        <ul>
+            <li><strong>Immediate survival jobs</strong> (day labor, low-barrier employers)</li>
+            <li><strong>Career-track opportunities</strong> (apprenticeships, union programs, peer-support roles, tech/healthcare pipelines)</li>
+            <li><strong>Education/training</strong> (community college, trade schools, bootcamps, scholarships, reentry-focused academic programs)</li>
+        </ul>
+        <p>Each resource is annotated with eligibility, documentation, transportation, timing, and — for work/education — whether it primarily serves survival income, career trajectory, or education.</p>
+        
+        <p><strong>Experiment 2: Retrieval accuracy under constraint and direction specificity.</strong><br>
+        For each test profile, I will:</p>
+        <ul>
+            <li>Have Re.Match propose housing, income, recovery, and directionally appropriate work/education moves.</li>
+            <li>Independently build a human “gold standard” via manual research and calls.</li>
+            <li>Compare precision, recall, and failure modes, with special focus on whether the system defaults to “just get a job” or respects the person’s long-range goals once survival is secured.</li>
+        </ul>
+
+        <h3>Phase 3: Dossier Generation & Usability Testing (Months 4–8)</h3>
+        <p>The Re.Match dossier is a sequenced plan that distinguishes clearly between:</p>
+        <ul>
+            <li><strong>Steps to stabilize survival</strong> (housing, benefits, any necessary temporary income); and</li>
+            <li><strong>Steps to build a chosen future</strong> (career and education paths that match the person’s interests, constraints, and values).</li>
+        </ul>
+        
+        <div class="highlight-box">
+            <p>"Short-term: enroll in X program that gives a modest stipend and satisfies supervision; this keeps a roof over your head without burying you in 60 hours/week of random labor."</p>
+            <br>
+            <p>"Medium-term: register for Y community college term or Z trades apprenticeship aligned with your stated direction."</p>
+            <br>
+            <p>"What we will not do: push you toward a burner job that meets other people’s expectations but destroys your bandwidth for building the life you actually want."</p>
+        </div>
+
+        <p><strong>Experiment 3: Usability and impact.</strong><br>
+        With 10–20 participants, I will compare a control (standard referrals plus informal social pressure) against the treatment (a Re.Match dossier that stabilizes survival while protecting career/education direction). I will track whether participants attempt the first step within 72 hours, whether they feel less pressure to take misaligned work, and whether they enroll in or move toward longer-term education/career paths they actually want.</p>
+        <p>Qualitative interviews will probe whether the system helped them resist unhelpful pressure and see a believable path that is not just “food for the machine.”</p>
+
+        <h2>Novelty</h2>
+        <p>The closest existing work falls into three categories, each of which Re.Match deliberately departs from.</p>
+        <p><strong>Referral platforms and resource directories</strong> — 211, Aunt Bertha (Findhelp), NowPow, and similar systems — solve a discovery problem. They index services and surface them by keyword or geography. They do not solve a navigation problem. They assume the person querying the system can evaluate eligibility, sequence steps, manage documentation requirements, and sustain follow-through under their current conditions. Re.Match’s departure: constraint-indexed matching replaces keyword search, and the output is a sequenced action dossier rather than a directory result.</p>
+        <p><strong>AI chatbots deployed in social service contexts</strong> — including early-stage benefits navigation bots and crisis line augmentations — show that conversational AI can engage vulnerable populations. What they have not solved is actionability under constraint specificity. A chatbot that does not know a person has no ID, is on active parole, has a 9 PM curfew, and cannot take buses cannot give that person a useful next step. The bottleneck is the absence of a structured constraint profile as a precondition for generation. Re.Match makes the profile the foundation, not an afterthought.</p>
+        <p><strong>Case management software</strong> (Apricot, Salesforce Nonprofit, Clarity Human Services) captures constraint data but does not use it generatively. It is a record system, not a reasoning system. The data sits in fields; it does not produce action.</p>
+        <p>What Re.Match introduces that does not currently exist in combination is a structured constraint intake schema driving a generative, provenance-tracked, sequenced action output — built specifically for the cognitive and logistical reality of people navigating simultaneous multi-domain crisis. The novelty is not any single component. It is the architecture that connects them and the population-specific design logic that makes the output trustworthy enough to act on.</p>
+
+        <h2>Feasibility</h2>
+        <p>The core technical components of Re.Match are not experimental; they are proven primitives combined in a novel architecture. Retrieval‑augmented generation over live and cached knowledge bases is already production‑validated. Structured intake schemas driving conditional logic and ranked outputs are standard in clinical decision support, legal tech, and benefits eligibility systems. Frontier language models generating plain‑language action summaries from structured inputs perform this task reliably at current capability levels. None of these components require a research breakthrough to function. The question is whether their combination, tuned to constraint‑specific navigational tasks for this population, produces outputs accurate and actionable enough to be trustworthy.</p>
+        <p>There are three strands of prior evidence that it will.</p>
+        <p>First, I have already built a working intake‑to‑dossier pipeline in my own development environment, generating constraint‑indexed resource dossiers for test profiles drawn from real navigational scenarios. The outputs are coherent, appropriately sequenced, and clearly flag uncertainty. A prototype exists; this proposal funds its hardening, evaluation, and deployment.</p>
+        <p>Second, the outreach campaign documented alongside this proposal — contacting over 90 organizations across Portland, Washington County, and the broader social services ecosystem — produced confirmed delivery to Blanchet House, Union Gospel Mission, Outside In, Catholic Charities Oregon, Providence Health, TechSoup, SEIU, Ashoka, and others. Pilot partner relationships are forming before any prototype funding has been received. That ecosystem reception validates both demand and relevance.</p>
+        <p>Third, I am a current resident of Project Homeless Connect, actively navigating the exact constraint environment Re.Match is designed to serve. Every design decision is pressure‑tested against lived reality. There is no translation layer between designer and user. That is not a soft credential; it is a practical proof of concept: the system is being built by someone who needs it, for people who need it, in the environment where it will actually be used.</p>
+
+        <h2>Team</h2>
+        <p>I am the sole investigator, designer, and builder on this project. There is no institutional affiliation, no co‑investigator, and no support staff.</p>
+        <p>My development environment functions as a distributed, role‑specialized team. I run two parallel agent deployments of my own design: a WSL environment with agents (OpenClaw and Hermes) powered by a resilient free‑tier LLM stack, and a Windows 11 PowerShell environment running Gemini CLI, Codex CLI, and GitHub Copilot. Each agent has a deeply customized system prompt and a distinct operational “personality,” which increases coherence, handoff quality, and output consistency compared to defaults. Architecture design, schema development, retrieval pipelines, evaluation logic, and documentation can proceed in parallel — work that would typically require multiple engineers.</p>
+        <p>My expertise in LLM orchestration, multi‑agent system design, retrieval‑augmented generation, vector databases, prompt engineering, CLI agents, and API integration was built through continuous hands‑on development and constraint‑driven experimentation. I run regular token‑efficiency and minimal‑compute experiments because efficiency plus capability yields better systems, lower costs, and reduced environmental impact. This is a deliberate engineering value, not just a response to scarcity.</p>
+        <p>I am currently residing at Project Homeless Connect in Hillsboro, Oregon. Re.Match is my only professional focus; the benefits cliff described elsewhere makes divided attention economically impossible. Every available hour goes into this build.</p>
+        <p>What I am asking for is not salary or overhead. It is tool elevation: removal of rate‑limit ceilings on at least one primary CLI pipeline and sufficient API access to keep my agents and automation running without interruption. The cost is essentially a software subscription. The return is a production‑validated, fully open‑source AI navigation system for some of the most underserved populations in the country, delivered within six months by someone already building at this level with far less.</p>
+
+        <h2>Future Ambition (Tier 1)</h2>
+        <p>If Re.Match succeeds, the larger version is not a bigger referral engine. It is the first layer of a three-part public infrastructure stack designed to address information poverty, executive dysfunction under crisis, and social isolation — each system independently valuable, each amplifying the others.</p>
+        <p><strong>Re.Match</strong> scales first: peer deployment, data validation, hardening, portable institutional packaging, then county and state reentry integration. It is open source, zero cost to users, and compute-governed by identity verification and dossier frequency limits.</p>
+        <p><strong>Rolling Victory Engine (RVE)</strong> is the second layer — a personal life operating system that turns chaotic, multi-domain obligations into an executable daily structure with no technical overhead for the user. It is a constraint-aware scheduling and task decomposition engine built for people managing reentry, recovery, poverty, legal obligations, medical care, skill development, and personal goals at the same time. Onboarding can happen via voice. The system slots time-specific items into a calendar automatically and fills remaining capacity with the smallest possible next steps toward each priority, designed to be doable under maximum cognitive depletion. I am already living inside my own prototype; the long-term vision is a zero-cost mobile app running on a small local model.</p>
+        <p><strong>Second Wind</strong> is the third layer — a community-based accountability and growth network built on a node replication model. The first node is 4D Recovery in Hillsboro, adjacent to the county corrections center, creating a natural pipeline from incarceration to community. From there, nodes expand into gyms, martial arts groups, recovery meetings, treatment programs, and other grassroots spaces, supported by a digital platform and frequent meetups.</p>
+        <p>A 2–5x budget funds institutional adoption for Re.Match and initiates RVE’s public version and Second Wind’s first formal node. The goal is not scale for its own sake, but permanence.</p>
+
+        <h2>Proposal Risks</h2>
+        <h3>1. Hallucination and harmful misinformation</h3>
+        <p>The highest-stakes risk in this domain is not a failed experiment — it is a confident wrong answer delivered to someone in crisis. An incorrect intake number, a hallucinated eligibility rule, or a stale address given to a recently released person does not produce a neutral outcome. It produces a missed appointment, a violated condition of supervision, or a collapsed housing placement.</p>
+        <p>Mitigation is structural: every output carries provenance metadata — source, access method, last-verified date, and an explicit confidence tier. The system is designed to surface uncertainty rather than paper over it. Outputs that cannot be verified are flagged, not suppressed. The dossier format includes explicit fallback instructions for every recommendation that cannot be confirmed.</p>
+
+        <h3>2. Trust and adoption failure</h3>
+        <p>People navigating reentry, recovery, and housing instability have been failed repeatedly by systems that promised help and delivered bureaucracy. An AI tool with no track record faces a significant prior-belief problem. If users don't trust the output, they won't act on it — and the intervention fails regardless of technical accuracy.</p>
+        <p>Mitigation is deployment sequencing: the prototype circulates first among peers, within recovery meetings and treatment groups where the builder has direct personal relationships. Trust is established person-to-person before it is established system-to-user. Early adopters become advocates, not test subjects.</p>
+
+        <h3>3. Single-point-of-failure on the builder</h3>
+        <p>A solo build carries concentration risk. Illness, housing instability, or compute access interruption could stall delivery.</p>
+        <p>Mitigation is the open-source architecture itself: all code, schema design, evaluation rubrics, and documentation are version-controlled and publicly accessible from the earliest stages. If the builder is interrupted, the work is not lost. Any technically capable person can continue it. This is not a contingency — it is a design requirement.</p>
+
+        <h2>Existing Funding</h2>
+        <p>If Schmidt Sciences does not fund this proposal:</p>
+        <p>The project continues. Re.Match will be built because it needs to exist and because I am the person positioned to build it right now. What changes is the timeline and the ceiling.</p>
+        <p>The Cohere grant covers batch workloads. Student credits cover light development. What neither can cover is sustained, rate-unlimited agentic development — the deep reasoning sessions that require a frontier model held in context across hours of iterative architecture work. One uncaught experiment recently would have consumed $400 in credits and triggered rate-limit recovery across every primary tool for days. I caught it in time and refactored it to near-zero cost — but that process added approximately a week to the build. That kind of fragility, compounded across a full development cycle, transforms a six-month project into an eighteen-month one, at lower quality throughout.</p>
+        <p>The window I am currently in is finite and rare: temporarily housed, medically stable, away from active addiction, with a computer, food security, and uninterrupted focus. This convergence of conditions will not last indefinitely. Every dollar of infrastructure support received now is worth several multiples of the same dollar received later — because later, the conditions that make this level of output possible may no longer exist.</p>
+        <p>Schmidt Sciences funding does not determine whether Re.Match gets built. It determines how well it gets built, and how soon the people who need it have access to it.</p>
+
+        <h2>Suggested Reviewers</h2>
+        <p><em>Note on application portal: Required field marked as optional.</em><br>
+        I do not have specific reviewer suggestions to provide at this time.</p>
+
+        <h2>Relevant Figure/Diagram</h2>
+        <a href="https://drive.google.com/drive/folders/1RGlKkiASG5y2GeBx7hTldQM8WvqyutVm?usp=sharing" target="_blank" class="figure-link">View Project Architecture Diagrams (Google Drive)</a>
+
+        <div class="references-section">
+            <h2>References</h2>
+            
+            <h4>Cognitive Bandwidth, Scarcity & Poverty</h4>
+            <p>Mullainathan, S., & Shafir, E. (2013). Scarcity: Why Having Too Little Means So Much. Times Books / Henry Holt. <a href="https://www.hks.harvard.edu/centers/cid/publications/books/scarcity-why-having-too-little-means-so-much" target="_blank">[Link]</a></p>
+            <p>Mani, A., Mullainathan, S., Shafir, E., & Zhao, J. (2013). Poverty impedes cognitive function. Science, 341(6149), 976–980. <a href="https://www.science.org/doi/10.1126/science.1238041" target="_blank">[Link]</a></p>
+            <p>Shah, A. K., Mullainathan, S., & Shafir, E. (2012). Some consequences of having too little. Science, 338(6107), 682–685. <a href="https://www.sciencedirect.com/science/article/abs/pii/S016748701830309X" target="_blank">[Link]</a></p>
+            <p>Schilbach, F., Schofield, H., & Mullainathan, S. (2016). The psychological lives of the poor. American Economic Review, 106(5), 435–440. <a href="https://sendhil.org/wp-content/uploads/2019/08/Publication-14.pdf" target="_blank">[Link]</a></p>
+            <p>Ridley, M., Rao, G., Schilbach, F., & Patel, V. (2020). Poverty, depression, and anxiety: Causal evidence and mechanisms. Science, 370(6522). <a href="https://www.science.org/doi/10.1126/science.aay0214" target="_blank">[Link]</a></p>
+            <p>Amir, O., et al. (2022). The cognitive burden of poverty: A mechanism of disadvantage. Frontiers in Psychology. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10176429/" target="_blank">[Link]</a></p>
+            <p>Mullainathan, S., & Shafir, E. (2021). Poverty-related bandwidth constraints reduce the value of consumption. PNAS. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8536330/" target="_blank">[Link]</a></p>
+            <p>Spears, D. (2011). Economic decision-making in poverty depletes behavioral control. The B.E. Journal of Economic Analysis & Policy, 11(1). <a href="https://www.degruyter.com/document/doi/10.2202/1935-1682.2973/html" target="_blank">[Link]</a></p>
+            <p>Van Wolkenten, M., et al. (2017). A review of consequences of poverty on economic decision-making. Frontiers in Psychology. <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2017.01784/full" target="_blank">[Link]</a></p>
+            <p>BFI Working Paper (2022). Scarcity and inattention. Becker Friedman Institute, University of Chicago. <a href="https://bfi.uchicago.edu/wp-content/uploads/2022/06/BFI_WP_2022-76.pdf" target="_blank">[Link]</a></p>
+            <p>UAB Human Rights (2026). Poverty, scarcity, and the psychology of decision-making. <a href="https://sites.uab.edu/humanrights/2026/04/10/poverty-scarcity-and-the-psychology-of-decision-making/" target="_blank">[Link]</a></p>
+            <p>Seattle Jobs Initiative. How poverty and cognitive biases can impact decisions. <a href="https://www.seattlejobsinitiative.com/wp-content/uploads/SJI_BehaviorEconomics_vFinal.pdf" target="_blank">[Link]</a></p>
+            <p>Wharton Knowledge. Why mental bandwidth could explain the psychology behind poverty. <a href="https://knowledge.wharton.upenn.edu/article/bandwidth-explain-psychology-behind-poverty/" target="_blank">[Link]</a></p>
+            <p>APA Monitor (2014). The psychology of scarcity. <a href="https://www.apa.org/monitor/2014/02/scarcity" target="_blank">[Link]</a></p>
+
+            <h4>Reentry, Homelessness & Navigational Failure</h4>
+            <p>U.S. Department of Justice (2022). Coordination to reduce barriers to reentry. <a href="https://www.justice.gov/archives/opa/press-release/file/1497911/dl" target="_blank">[Link]</a></p>
+            <p>HUD USER / Cityscape (2023). Addressing barriers to housing in reentry programs. <a href="https://www.huduser.gov/portal/periodicals/cityscape/vol25num2/ch1.pdf" target="_blank">[Link]</a></p>
+            <p>UNLV (2024). Barriers to successful re-entry. <a href="https://www.unlv.edu/sites/default/files/media/document/2024-12/r6-Reentry.pdf" target="_blank">[Link]</a></p>
+            <p>Tyler Technologies (2025). Navigating the barriers to reentry success. <a href="https://www.tylertech.com/resources/resource-downloads/navigating-the-barriers-to-reentry-success" target="_blank">[Link]</a></p>
+            <p>Executive function and adult homelessness: True impairment or methodological artifact? (2024). PMC. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10844389/" target="_blank">[Link]</a></p>
+            <p>Cognitive impairment and homelessness: A scoping review. (2019). PMC. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6849546/" target="_blank">[Link]</a></p>
+            <p>Reintegration of homeless individuals with severe mental illness. (2024). SSRN. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5160473" target="_blank">[Link]</a></p>
+            <p>Cognitive correlates of resilience in adults experiencing homelessness. (2025). PMC. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12378357/" target="_blank">[Link]</a></p>
+            <p>Harvard Magazine. The science of scarcity. <a href="https://www.harvardmagazine.com/social-sciences/the-science-of-scarcity" target="_blank">[Link]</a></p>
+
+            <h4>Benefits Cliff</h4>
+            <p>Federal Reserve / DC Career MAP (2023). Mitigating benefits cliffs for low-income families. <a href="https://www.fedinprint.org/item/fedacd/97168" target="_blank">[Link]</a></p>
+            <p>Considering the benefits cliff embedded in the relationship between housing and health. (2023). PMC. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10445620/" target="_blank">[Link]</a></p>
+
+            <h4>Trustworthy AI, Hallucination & Vulnerable Populations</h4>
+            <p>Delegating research to AI is a risky proposition: The hallucination phenomenon. (2025). Inforrm. <a href="https://inforrm.org/2025/12/18/delegating-research-to-ai-is-a-risky-proposition-the-hallucination-phenomenon-user-beware-hugh-stephenson/" target="_blank">[Link]</a></p>
+            <p>The reality of AI hallucinations in 2025. <a href="https://drainpipe.io/the-reality-of-ai-hallucinations-in-2025/" target="_blank">[Link]</a></p>
+            <p>Social workers support vulnerable community members' rights to access safe, beneficent and effective AI. (2024). Grand Challenges for Social Work. <a href="https://grandchallengesforsocialwork.org/wp-content/uploads/2024/07/240730_Harness-Tech_FINAL.pdf" target="_blank">[Link]</a></p>
+            <p>Use of AI tools in social work and child welfare. (2024). SDSU Academy. <a href="https://theacademy.sdsu.edu/wp-content/uploads/2024/01/CWDS-Research-Summary_-Use-of-AI-Tools-in-Social-Work-and-Child-Welfare-S.pdf" target="_blank">[Link]</a></p>
+            <p>Opportunities and challenges of artificial intelligence in public health. (2026). PMC. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12847321/" target="_blank">[Link]</a></p>
+            <p>Behavioral economics and AI in social services. (2026). Behavioral Economics.com <a href="https://www.behavioraleconomics.com/flipping-the-switch-how-embracing-cognitive-scarcity-can-brighten-energy-poverty/" target="_blank">[Link]</a></p>
+
+            <h4>Retrieval-Augmented Generation (RAG)</h4>
+            <p>Lewis, P., et al. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. NeurIPS 2020. <a href="https://arxiv.org/abs/2005.11401" target="_blank">[Link]</a></p>
+            <p>Systematic review of key retrieval-augmented generation developments. (2025). arXiv. <a href="https://arxiv.org/html/2507.18910v1" target="_blank">[Link]</a></p>
+            <p>RAG for public sector management. (2025). Datategy. <a href="https://www.datategy.net/2025/04/07/how-rag-systems-improve-public-sector-management/" target="_blank">[Link]</a></p>
+            <p>Retrieval-augmented generation: What is there for social good? (2026). ACM Digital Library. <a href="https://dl.acm.org/doi/10.1145/3793217.3793229" target="_blank">[Link]</a></p>
+
+            <h4>Behavioral Science: Activation Energy & Friction Reduction</h4>
+            <p>Fogg, B. J. (2019). Tiny Habits: The Small Changes That Change Everything. Houghton Mifflin Harcourt. <a href="https://www.tinyhabits.com" target="_blank">[Link]</a></p>
+            <p>Clear, J. (2018). Atomic Habits. Avery/Penguin Random House. <a href="https://jamesclear.com/atomic-habits" target="_blank">[Link]</a></p>
+            <p>Thaler, R. H., & Sunstein, C. R. (2008). Nudge: Improving Decisions About Health, Wealth, and Happiness. Yale University Press. <a href="https://yalebooks.yale.edu/book/9780300122237/nudge" target="_blank">[Link]</a></p>
+            <p>Activation energy as behavioral model. ModelThinkers. <a href="https://modelthinkers.com/mental-model/activation-energy" target="_blank">[Link]</a></p>
+
+            <h4>Recidivism — Statistics, Trends & Structural Barriers</h4>
+            <p>Prison Policy Initiative. Reentry and recidivism: Key statistics. <a href="https://www.prisonpolicy.org/research/reentry_and_recidivism/" target="_blank">[Link]</a></p>
+            <p>Bureau of Justice Statistics. Recidivism and reentry. U.S. Department of Justice. <a href="https://bjs.ojp.gov/topics/recidivism-and-reentry" target="_blank">[Link]</a></p>
+            <p>U.S. Sentencing Commission (2022). Length of incarceration and recidivism. <a href="https://www.ussc.gov/research/research-reports/length-incarceration-and-recidivism-2022" target="_blank">[Link]</a></p>
+            <p>Council on Criminal Justice (2021). New national recidivism report. <a href="https://counciloncj.org/recidivism_report/" target="_blank">[Link]</a></p>
+            <p>CSG Justice Center (2026). 50 states, 1 goal: Examining state-level recidivism trends. <a href="https://csgjusticecenter.org/publications/50-states-1-goal/" target="_blank">[Link]</a></p>
+            <p>CSG Justice Center (2025). Beyond recidivism: Redefining measures to understand reentry. <a href="https://csgjusticecenter.org/publications/beyond-recidivism-redefining-reentry-data-health-housing-employment/" target="_blank">[Link]</a></p>
+            <p>Sagepub (2025). Beyond recidivism: A systematic review exploring comprehensive reentry outcomes. Crime & Delinquency. <a href="https://journals.sagepub.com/doi/10.1177/00938548251335322" target="_blank">[Link]</a></p>
+            <p>UNC / CBCF (2023). Eliminating barriers to reentry for returning citizens. <a href="https://www.med.unc.edu/fammed/nctac/wp-content/uploads/sites/1256/2024/02/2023_CBCF_CPAR_Reentry-Practices-Final.pdf" target="_blank">[Link]</a></p>
+            <p>Harvard Institute of Politics (2019). Successful reentry: A community-level approach. <a href="https://iop.harvard.edu/sites/default/files/2023-02/IOP_Policy_Program_2019_Reentry_Policy.pdf" target="_blank">[Link]</a></p>
+
+            <h4>Recidivism — Psychosocial & Structural Determinants</h4>
+            <p>Psychosocial determinants of recidivism risk among incarcerated individuals. (2025). PMC. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12250312/" target="_blank">[Link]</a></p>
+            <p>The associations between social determinants of health and recidivism among women exiting prison. (2024). PMC. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10765932/" target="_blank">[Link]</a></p>
+            <p>Social determinants of health applied to corrections. National Commission on Correctional Health Care. <a href="https://ncchcresourcescenter.org/wp-content/uploads/CLA_DRC-Social-Determinants-of-Health-Applied-to-Corrections.pdf" target="_blank">[Link]</a></p>
+            <p>The social determinants of health and reentry. ThinkIR, University of Louisville. <a href="https://ir.library.louisville.edu/cgi/viewcontent.cgi?article=1114&context=tce" target="_blank">[Link]</a></p>
+            <p>Examining social determinants of health of formerly incarcerated individuals. CSUSB ScholarWorks. <a href="https://scholarworks.lib.csusb.edu/context/etd/article/2719/viewcontent/auto_convert.pdf" target="_blank">[Link]</a></p>
+            <p>Incarceration as social determinant of health. Penn LDI (2026). <a href="https://ldi.upenn.edu/our-work/research-updates/incarceration-as-social-determinant-of-health/" target="_blank">[Link]</a></p>
+            <p>HUD USER / Cityscape (2023). Addressing barriers to housing in reentry programs. <a href="https://www.huduser.gov/portal/periodicals/cityscape/vol25num2/ch1.pdf" target="_blank">[Link]</a></p>
+
+            <h4>Addiction Theory, Relapse Prevention & Recovery</h4>
+            <p>Marlatt, G. A., & Gordon, J. R. (1985). Relapse Prevention: Maintenance Strategies in the Treatment of Addictive Behaviors. Guilford Press.</p>
+            <p>Larimer, M. E., Palmer, R. S., & Marlatt, G. A. (1999). Relapse prevention: An overview of Marlatt's cognitive-behavioral model. Alcohol Research & Health, 23(2), 151–160. <a href="https://pubmed.ncbi.nlm.nih.gov/10890810/" target="_blank">[Link]</a></p>
+            <p>Relapse prevention: An overview of Marlatt's cognitive-behavioral model. (2021). PMC. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6760427/" target="_blank">[Link]</a></p>
+            <p>Marlatt's cognitive-behavioral model: Academic overview and applications. Academia.edu. <a href="https://www.academia.edu/81471432/Relapse_Prevention_An_Overview_of_Marlatt_s_Cognitive_Behavioral_Model" target="_blank">[Link]</a></p>
+            <p>Comparing the effectiveness of cognitive-behavioral therapy and brief intervention in relapse prevention. (2022). PMC. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10408754/" target="_blank">[Link]</a></p>
+            <p>The effectiveness of CBT in reducing relapse risk for recovering addicts. (2022). International Journal of Health Sciences. <a href="https://sciencescholar.us/journal/index.php/ijhs/article/view/10826" target="_blank">[Link]</a></p>
+            <p>How CBT helps in treating addiction and prevents relapse. Nova Recovery Center (2022). <a href="https://www.novarecoverycenter.com/addiction/how-cognitive-behavioral-therapy-helps-in-treating-addiction-prevents-relapse/" target="_blank">[Link]</a></p>
+
+            <h4>Barriers to Treatment Access & Social Determinants of Recovery</h4>
+            <p>Barriers and facilitators to substance use disorder treatment: An integrative review. (2022). PMC. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9434658/" target="_blank">[Link]</a></p>
+            <p>Treatment access barriers and disparities among individuals with co-occurring disorders. (2015). PMC. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4695242/" target="_blank">[Link]</a></p>
+            <p>Substance use disorder prevention and treatment services: A social justice and health equity perspective. (2023). Behavioral Health News. <a href="https://behavioralhealthnews.org/substance-use-disorder-prevention-and-treatment-services-a-social-justice-and-health-equity-perspective/" target="_blank">[Link]</a></p>
+
+            <h4>Trauma-Informed Practice in Reentry & Recovery</h4>
+            <p>Trauma-informed practice for reentry providers. National Reentry Resource Center / CCETAC. <a href="https://nationalreentryresourcecenter.org/sites/default/files/inline-files/Trauma-Informed_Practice_For_Reentry_Providers_Brief.pdf" target="_blank">[Link]</a></p>
+            <p>Trauma-informed approaches and community engagement. RTI International (2024). <a href="https://www.rti.org/rti-press-publication/trauma-informed-approaches-community-engagement-community-engaged-research-cenr-program" target="_blank">[Link]</a></p>
+            <p>A journey towards a trauma-informed and responsive justice system. (2025). PMC. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11705546/" target="_blank">[Link]</a></p>
+            <p>Trauma-informed research with emerging adult survivors of incarceration. (2024). Journals.sagepub.com. <a href="https://journals.sagepub.com/doi/10.1177/10547738241248861" target="_blank">[Link]</a></p>
+            <p>SAMHSA (2014). SAMHSA's Concept of Trauma and Guidance for a Trauma-Informed Approach. Substance Abuse and Mental Health Services Administration. <a href="https://store.samhsa.gov/product/SMA14-4884" target="_blank">[Link]</a></p>
+        </div>
+    </main>
+
+    <div class="footer">
+        Generated for Schmidt Sciences 2026 Science of Trustworthy AI RFP • TAI-RFP-Q1-26-0000001946
+    </div>
+</div>
+
+</body>
+</html>
