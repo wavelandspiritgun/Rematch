@@ -1,52 +1,78 @@
 <div align="center">
-  <img src="./01_rematch_constraint_aware_navigation_engine.jpg" alt="Re.Match Banner" width="800"/>
+  <img src="./01_rematch_constraint_aware_navigation_engine.jpg" alt="Conceptual diagram of the Re.Match constraint-aware navigation engine" width="800" />
 
-  # Re.Match Public Documentation
-  **A Profile-Conditioned Intelligence Engine for Reducing Information Poverty and Enhancing Structural Justice in Human Recovery.**
-  
-  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-  [![Status: Active Prototype](https://img.shields.io/badge/Status-Active_Prototype-success.svg)]()
+  # Re.Match
+  **Constraint-aware opportunity navigation for reentry, recovery, housing instability, and rebuilding economic agency.**
+
+  *Public research and system-design archive · May 2026 reference baseline*
 </div>
 
-<br/>
+## What this project aims to solve
 
-## 🎯 The Mission
-**Re.Match** is an AI-assisted opportunity, resource, and action-planning engine for people navigating reentry from incarceration, early recovery from addiction, housing instability, poverty, and systemic disruption.
+Someone navigating reentry, recovery, homelessness, or financial instability may face dozens of interdependent eligibility conditions, missing documents, deadlines, and program rules. A directory tells them what exists. **Re.Match is designed to help them work out which opportunities are plausible, what evidence is needed, and what to do next.**
 
-Its core function is to reduce **information poverty** as a structural barrier to recovery, stability, and reintegration. Re.Match does not ask people to do more; it asks people to do one next thing—and builds the scaffold that makes that one thing possible.
+The proposed system connects user-supplied constraints and goals to sourced opportunities, validates important conditions, and generates an actionable, prioritized navigation dossier with alternatives when an application path fails.
+
+## What is actually in this repository
+
+**Research and specifications, not a running public application.** This repository contains the project definition, proposed mechanisms, scientific references, evaluation design, safeguards, visual diagrams, and early grant-adaptation materials.
+
+It does **not** contain the current application/runtime source, a deployed production service, a completed clinical study, or evidence that proposed impact metrics have already been achieved. The documents are a dated foundation for ongoing prototyping, not a list of shipped features.
+
+| Document | Purpose |
+|---|---|
+| [Project definition](./01_ReMatch_Definitive_Project_Definition_v2.0.md) | Mission, user problems, envisioned workflows and architecture |
+| [Scientific foundation](./02_ReMatch_Scientific_Foundation_White_Paper_v1.0.md) | Literature-informed rationale and its limitations |
+| [Feature/mechanism evidence map](./03_ReMatch_Feature_to_Mechanism_Evidence_Map_v1.0.md) | Proposed features linked to hypothesized mechanisms |
+| [Theory of change and evaluation](./04_ReMatch_Theory_of_Change_and_Evaluation_Framework_v1.0.md) | Testable outcomes, metrics, pilot/evaluation plan |
+| [Ethics, privacy and governance](./05_ReMatch_Ethics_Privacy_and_Governance_Framework_v1.0.md) | Data minimization, agency, anti-surveillance and human-review boundaries |
+| [Grant/credit adaptation kit](./06_ReMatch_Grant_and_Credit_Adaptation_Kit_v1.0.md) | Earlier funder-oriented narrative templates |
+| [Research targets and citation backbone](./07_ReMatch_Research_Targets_and_Citation_Backbone_v1.0.md) | Source trail and further research agenda |
+| [Consolidated reference bundle](./ReMatch_Permanent_Reference_Bundle_v1.0.md) | Historical combined reference text |
+
+## Conceptual workflow
+
+```text
+Consent-based user intake
+     ↓
+Profile constraints, goals and missing evidence
+     ↓
+Source-linked opportunity discovery and eligibility checks
+     ↓
+Prioritized options with explicit uncertainty and hard gates
+     ↓
+Documents · contact path · next action · fallback
+     ↓
+User decision and human verification
+```
+
+The intended output is not an eligibility guarantee, diagnosis, legal opinion, benefits determination, or probation risk score.
+
+## Visual specifications
+
+| Concept | Diagram |
+|---|---|
+| Constraint-aware navigation | [JPG](./01_rematch_constraint_aware_navigation_engine.jpg) |
+| Theory of change | [JPG](./02_rematch_theory_of_change.jpg) |
+| Evidence → feature mechanism | [JPG](./03_rematch_evidence_to_feature_mechanism_map.jpg) |
+| Pilot evaluation feedback loop | [JPG](./04_rematch_pilot_evaluation_learning_flywheel.jpg) |
+
+## What must be demonstrated next
+
+1. A reproducible end-to-end demonstration with sourced, date-stamped opportunity records.
+2. Verification and provenance tests that distinguish actual program rules from assumptions or stale directories.
+3. A privacy-preserving intake workflow with meaningful consent and deletion/retention boundaries.
+4. Field testing with willing participants and clear human-review safeguards.
+5. A measurable evaluation of whether actionability, time-to-service, and verified outcomes improve.
+
+## Privacy and responsible use
+
+The intended users may disclose health, housing, recovery, or legal circumstances. **Do not submit personal intake information through this documentation repository.** Re.Match must not be used as a diagnostic, clinical, legal, eligibility-decision or surveillance system. The [governance framework](./05_ReMatch_Ethics_Privacy_and_Governance_Framework_v1.0.md) defines proposed protections requiring implementation and independent validation.
+
+## Historical materials
+
+Older grant proposals and budget templates remain in the repository as dated research/planning artifacts; their titles, budgets and milestones do not constitute confirmation of funding, institutional endorsement, or completed work.
 
 ---
 
-## 📂 Repository Contents
-
-This repository hosts the definitive public-facing documentation, architectural diagrams, and scientific foundations that govern Re.Match.
-
-### 🏛️ Core Project Documentation
-*   **[`01_ReMatch_Definitive_Project_Definition_v2.0.md`](./01_ReMatch_Definitive_Project_Definition_v2.0.md)** — The canonical project charter detailing vision, objectives, user flows, and high-level architecture.
-*   **[`02_ReMatch_Scientific_Foundation_White_Paper_v1.0.md`](./02_ReMatch_Scientific_Foundation_White_Paper_v1.0.md)** — Deep dive into the theoretical, empirical, and behavioral-health science backing the system.
-*   **[`03_ReMatch_Feature_to_Mechanism_Evidence_Map_v1.0.md`](./03_ReMatch_Feature_to_Mechanism_Evidence_Map_v1.0.md)** — Maps every proposed feature back to its scientific and psychological mechanism.
-*   **[`04_ReMatch_Theory_of_Change_and_Evaluation_Framework_v1.0.md`](./04_ReMatch_Theory_of_Change_and_Evaluation_Framework_v1.0.md)** — Defines intended impact trajectories and strict success/failure metrics.
-*   **[`05_ReMatch_Ethics_Privacy_and_Governance_Framework_v1.0.md`](./05_ReMatch_Ethics_Privacy_and_Governance_Framework_v1.0.md)** — Non-negotiable rules on data handling, privacy preservation, and harm-reduction safeguards.
-*   **[`06_ReMatch_Grant_and_Credit_Adaptation_Kit_v1.0.md`](./06_ReMatch_Grant_and_Credit_Adaptation_Kit_v1.0.md)** — Frameworks for aligning Re.Match with standard grant requirements and operational funding.
-*   **[`07_ReMatch_Research_Targets_and_Citation_Backbone_v1.0.md`](./07_ReMatch_Research_Targets_and_Citation_Backbone_v1.0.md)** — The complete reference list and research roadmap driving the engine's reasoning limits.
-*   **[`ReMatch_Permanent_Reference_Bundle_v1.0.md`](./ReMatch_Permanent_Reference_Bundle_v1.0.md)** — A consolidated macro-document containing all foundational texts.
-
-### 📐 Visual Architecture & Systems (JPG / PDF)
-*   **Constraint-Aware Navigation Engine** ([JPG](./01_rematch_constraint_aware_navigation_engine.jpg) | [PDF](./01_rematch_constraint_aware_navigation_engine.pdf)) — Visualized mapping of the core intake-to-dossier flow.
-*   **Theory of Change** ([JPG](./02_rematch_theory_of_change.jpg) | [PDF](./02_rematch_theory_of_change.pdf)) — Systems-level diagram tracing outcomes and ecosystem interactions.
-*   **Evidence to Feature Mechanism Map** ([JPG](./03_rematch_evidence_to_feature_mechanism_map.jpg) | [PDF](./03_rematch_evidence_to_feature_mechanism_map.pdf)) — Detailed mapping of how evidence drives specific UI and routing choices.
-*   **Pilot Evaluation Learning Flywheel** ([JPG](./04_rematch_pilot_evaluation_learning_flywheel.jpg) | [PDF](./04_rematch_pilot_evaluation_learning_flywheel.pdf)) — How the system learns safely from failure modes and operational data.
-
-### 💼 Applications, Planning, and Templates
-*   **[`Schmidt_Sciences_Application_Final.html`](./Schmidt_Sciences_Application_Final.html)** — The finalized, integrated grant application defining Re.Match as a "Trustworthy AI" project.
-*   **[`REMATCH Science of Trustworthy AI RFP Budget Template.xlsx`](./REMATCH%20%20Science%20of%20Trustworthy%20AI%20RFP%20Budget%20Template.xlsx)** — The operational roadmap and budget constraints.
-*   **[`(Template) (Name) Science of Trustworthy AI RFP Scientific Milestones and Outcomes Template.xlsx`](./(Template)%20(Name)%20Science%20of%20Trustworthy%20AI%20RFP%20Scientific%20Milestones%20and%20Outcomes%20Template.xlsx)** — Core timelines.
-
----
-
-## 🚧 Current Development Bottlenecks
-Re.Match is currently developed by a solo engineer working from within a transitional housing program. Development speed is constrained heavily by compute ceilings:
-*   **Rate Limits on Frontier Models:** Complex, multi-agent AI coding sessions frequently collide with restrictive API rate limits, effectively grounding development to a halt.
-*   **API Ecosystem Access:** Constructing the retrieval-augmented database of local social services requires reliable access to scraping and vector database APIs.
-
-*This repository operates as our primary open-source intelligence layer. By contributing to or funding this infrastructure, you are helping lower the activation energy required for the most vulnerable populations to survive and stabilize.*
+**Project stage:** research, specification and active prototyping. **Public code/demo status:** not packaged in this repository. **License:** no repository-wide license is asserted here.
